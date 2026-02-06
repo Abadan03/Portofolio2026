@@ -1,9 +1,7 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import CustomCursor from "@/components/gsap/CustomCursor";
-
-
+import RootLayoutClient from "./layout-client";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,15 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className=""
-      >
-        <CustomCursor />
-        <Navbar />
-        <main>
+    <html lang="en" className="scroll-smooth">
+      <body className="">
+        <RootLayoutClient>
           {children}
-        </main>
+        </RootLayoutClient>
       </body>
     </html>
   );
